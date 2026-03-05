@@ -1,0 +1,36 @@
+-- Seed: chat_messages
+-- Idempotent: ON CONFLICT (id) DO NOTHING
+
+INSERT INTO public.chat_messages (
+  id, channel_id, member_id, content, created_at,
+  reply_to, forwarded_from, edited_at, deleted_at, supplier_contact_id
+) VALUES
+  -- Kunngjøringer
+  ('d815eeea-4e7c-443f-8a3b-55b7428b438e', '3df49148-7553-4a33-9f5b-045954409d07', '5380ab14-ecb5-4de2-aca4-3affe245f251', 'Test kunngjøring for alle', '2026-03-01 11:39:50.520137+00', NULL, NULL, NULL, NULL, NULL),
+  -- Felleschat
+  ('bb3ad9ef-fe9a-4cb5-a070-f1a87576807e', '2983e8f1-ce82-4e5f-b5aa-4a9697e1a7de', '5380ab14-ecb5-4de2-aca4-3affe245f251', 'test', '2026-03-01 11:49:11.714859+00', NULL, NULL, NULL, NULL, NULL),
+  -- Russedress AS (supplier channel)
+  ('f54cc606-483f-4e6c-bbca-76412af86c02', 'b1b2c3d4-0001-4000-b000-000000000001', NULL, 'Hei Bergansen! Velkommen som kunde 🎉 Jeg er kontaktpersonen deres hos Russedress. Spør meg om hva som helst — leveringstider, størrelser, tilpasninger osv.', '2026-02-10 10:15:00+00', NULL, NULL, NULL, NULL, 'a1b2c3d4-0001-4000-a000-000000000001'),
+  ('7147a836-cb28-4232-aa24-e70ae6a4b83e', 'b1b2c3d4-0001-4000-b000-000000000001', '5380ab14-ecb5-4de2-aca4-3affe245f251', 'Hei Henrik! Vi er 24 stk, kan vi få en oversikt over størrelsesguiden?', '2026-02-10 12:30:00+00', NULL, NULL, NULL, NULL, NULL),
+  ('4d30d116-db47-40d9-aa01-9490b94f1be9', 'b1b2c3d4-0001-4000-b000-000000000001', NULL, 'Selvfølgelig! Her er størrelsesguiden 👇', '2026-02-10 12:45:00+00', NULL, NULL, NULL, NULL, 'a1b2c3d4-0001-4000-a000-000000000001'),
+  ('51fec287-905c-4321-b5a1-e142bc80f2b0', 'b1b2c3d4-0001-4000-b000-000000000001', NULL, 'Anbefaler at alle måler seg og sender inn størrelse innen 1. mars for å sikre leveranse i god tid.', '2026-02-10 12:46:00+00', NULL, NULL, NULL, NULL, 'a1b2c3d4-0001-4000-a000-000000000001'),
+  ('4449d290-6dec-48f3-b2cc-0444867e20de', 'b1b2c3d4-0001-4000-b000-000000000001', '5380ab14-ecb5-4de2-aca4-3affe245f251', 'Alle har sendt inn! 24 dresser, se vedlagt liste.', '2026-02-12 09:00:00+00', NULL, NULL, NULL, NULL, NULL),
+  ('ba331c60-fb0e-4f47-a8c3-77e3cc067b91', 'b1b2c3d4-0001-4000-b000-000000000001', NULL, 'Mottatt ✅ Dressene bestilles i dag. Estimert leveranse: uke 11 (9.–13. mars).', '2026-02-12 10:20:00+00', NULL, NULL, NULL, NULL, 'a1b2c3d4-0001-4000-a000-000000000001'),
+  ('e525c498-8087-4303-8955-065f89a280ad', 'b1b2c3d4-0001-4000-b000-000000000001', NULL, 'Hei! Dressene er sendt i dag, sporingsnummer: RF2026-4521. Forventet levering torsdag. 📦', '2026-03-01 14:30:00+00', NULL, NULL, NULL, NULL, 'a1b2c3d4-0001-4000-a000-000000000001'),
+  -- Fristil AS (supplier channel)
+  ('722a6c5c-4c83-4343-aa25-95b78a1f9d8e', 'b1b2c3d4-0002-4000-b000-000000000002', NULL, 'Hei Bergansen! Bussen deres er nå i produksjon. Jeg holder dere oppdatert med bilder underveis. 🚌', '2026-01-05 09:00:00+00', NULL, NULL, NULL, NULL, 'a1b2c3d4-0002-4000-a000-000000000002'),
+  ('9fc6cdba-7509-41b3-be78-48cbdd6ffe70', 'b1b2c3d4-0002-4000-b000-000000000002', NULL, 'Litt progress-bilder fra verkstedet!', '2026-01-20 11:00:00+00', NULL, NULL, NULL, NULL, 'a1b2c3d4-0002-4000-a000-000000000002'),
+  ('784ec4cc-5436-44ea-8f60-3fae14277f6a', 'b1b2c3d4-0002-4000-b000-000000000002', '5380ab14-ecb5-4de2-aca4-3affe245f251', 'Daaaaamn 🔥🔥🔥', '2026-01-20 11:15:00+00', NULL, NULL, NULL, NULL, NULL),
+  ('bb69e44b-43cc-4580-a5d5-03e4c80bf09b', 'b1b2c3d4-0002-4000-b000-000000000002', NULL, 'Wrapping-dag er bekreftet 15. mars kl 09:00 hos oss i Damsgårdsveien. Ta med god stemning, vi ordner pizza 🍕 Hele gruppen er velkommen til å være med!', '2026-02-15 13:00:00+00', NULL, NULL, NULL, NULL, 'a1b2c3d4-0002-4000-a000-000000000002'),
+  ('e6bb6b55-4d16-487c-aba0-5148a6e0bebf', 'b1b2c3d4-0002-4000-b000-000000000002', '5380ab14-ecb5-4de2-aca4-3affe245f251', 'Vi kommer alle! Gleder oss enormt', '2026-02-15 13:10:00+00', NULL, NULL, NULL, NULL, NULL),
+  ('a47f0f93-feb3-43b1-8384-38f03df30ab5', 'b1b2c3d4-0002-4000-b000-000000000002', '5380ab14-ecb5-4de2-aca4-3affe245f251', 'Kan vi filme wrappingen for TikTok?', '2026-02-15 13:12:00+00', NULL, NULL, NULL, NULL, NULL),
+  ('703a4985-b64b-4203-91c7-bea75b97cec6', 'b1b2c3d4-0002-4000-b000-000000000002', NULL, 'Absolutt! Vi har faktisk egen fotograf der som kan ta bilder av dere også 📸', '2026-02-15 13:20:00+00', NULL, NULL, NULL, NULL, 'a1b2c3d4-0002-4000-a000-000000000002'),
+  -- Busskompaniet (supplier channel)
+  ('c90e5f91-5a7e-4f44-bbb4-16268fb2737b', 'b1b2c3d4-0003-4000-b000-000000000003', NULL, 'Hei! Martin her fra Busskompaniet. Vi leverer lydanlegget til bussen deres. Har noen spørsmål om oppsettet?', '2026-02-08 10:00:00+00', NULL, NULL, NULL, NULL, 'a1b2c3d4-0003-4000-a000-000000000003'),
+  ('b603869c-5d7b-43d8-b60b-2c5e74c70688', 'b1b2c3d4-0003-4000-b000-000000000003', '5380ab14-ecb5-4de2-aca4-3affe245f251', 'Hei Martin! Vi lurte på om det er mulig å oppgradere til det større anlegget? Hva koster det?', '2026-02-08 14:00:00+00', NULL, NULL, NULL, NULL, NULL),
+  ('0358fe85-2363-4947-b561-663f938d5463', 'b1b2c3d4-0003-4000-b000-000000000003', NULL, 'Den store pakken er 45 000 kr mer enn det dere har nå. Inkluderer dobbelt så mange høyttalere og en skikkelig subwoofer. Anbefales 👌', '2026-02-08 14:30:00+00', NULL, NULL, NULL, NULL, 'a1b2c3d4-0003-4000-a000-000000000003'),
+  ('3692e258-6cfa-4f7e-838e-00786efc31ab', 'b1b2c3d4-0003-4000-b000-000000000003', '5380ab14-ecb5-4de2-aca4-3affe245f251', 'Da må vi ta en avstemning i gruppen. Kommer tilbake!', '2026-02-08 14:35:00+00', NULL, NULL, NULL, NULL, NULL),
+  ('2b2bba50-b1d8-40cf-a2c1-e3b18a07cce3', 'b1b2c3d4-0003-4000-b000-000000000003', NULL, 'Noen oppdatering på oppgraderingen? Må bestille innen 10. mars for å rekke installasjon.', '2026-02-25 09:00:00+00', NULL, NULL, NULL, NULL, 'a1b2c3d4-0003-4000-a000-000000000003'),
+  ('7527c794-e030-484b-9595-b9b710f1697a', 'b1b2c3d4-0003-4000-b000-000000000003', '5380ab14-ecb5-4de2-aca4-3affe245f251', 'Gruppen stemte ja! Vi oppgraderer 🎉', '2026-02-25 16:00:00+00', NULL, NULL, NULL, NULL, NULL),
+  ('dd6868bf-a583-4527-b9ca-10085998c496', 'b1b2c3d4-0003-4000-b000-000000000003', NULL, 'Sender over oppdatert serviceavtale i morgen', '2026-02-26 08:30:00+00', NULL, NULL, NULL, NULL, 'a1b2c3d4-0003-4000-a000-000000000003')
+ON CONFLICT (id) DO NOTHING;

@@ -1,0 +1,10 @@
+-- Seed: budget_payment_schedule
+-- Idempotent: ON CONFLICT (id) DO NOTHING
+
+INSERT INTO public.budget_payment_schedule (
+  id, budget_item_id, description, amount, due_date, status, created_at
+) VALUES
+  ('5b503b6c-66bc-46da-b0d3-a3e307075d24', '90c62b06-1269-4d50-bc00-cf11d78a4c83', 'Depositum',    500000, '2026-05-15', 'upcoming', '2026-03-01 12:02:38.402857+00'),
+  ('91064619-53b1-46ed-ac24-c60151fc648c', '90c62b06-1269-4d50-bc00-cf11d78a4c83', 'Betaling',     300000, '2026-06-18', 'upcoming', '2026-03-01 12:02:38.402857+00'),
+  ('de897127-c2ba-43c4-99b7-6a9836cd75ee', '90c62b06-1269-4d50-bc00-cf11d78a4c83', 'Restbetaling', 700000, '2026-08-15', 'upcoming', '2026-03-01 12:02:38.402857+00')
+ON CONFLICT (id) DO NOTHING;

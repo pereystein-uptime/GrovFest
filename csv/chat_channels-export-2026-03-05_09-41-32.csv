@@ -1,0 +1,6 @@
+id;group_id;name;type;created_at;participants;created_by;supplier_id
+2983e8f1-ce82-4e5f-b5aa-4a9697e1a7de;aec743b6-fceb-46ce-bfa0-bb962f43da9e;Felleschat;group;2026-03-01 11:39:38.286715+00;[];;
+3df49148-7553-4a33-9f5b-045954409d07;aec743b6-fceb-46ce-bfa0-bb962f43da9e;Kunngjøringer;announcement;2026-03-01 11:39:44.570264+00;[];;
+b1b2c3d4-0001-4000-b000-000000000001;aec743b6-fceb-46ce-bfa0-bb962f43da9e;Russedress AS;supplier;2026-03-02 12:15:05.554852+00;[];;61457532-6957-4d3e-ad68-b0bb57ba94f6
+b1b2c3d4-0002-4000-b000-000000000002;aec743b6-fceb-46ce-bfa0-bb962f43da9e;Fristil AS;supplier;2026-03-02 12:15:05.554852+00;[];;34ca967b-484c-4b81-949a-8eed550cd939
+b1b2c3d4-0003-4000-b000-000000000003;aec743b6-fceb-46ce-bfa0-bb962f43da9e;Busskompaniet;supplier;2026-03-02 12:15:05.554852+00;[];;ce58ca1f-4ba5-40a6-886c-b2e435446a5b

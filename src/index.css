@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'DM Sans', system-ui, sans-serif;
+
+    --background: 220 20% 97%;
+    --foreground: 230 25% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 230 25% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 25% 10%;
+
+    --primary: 243 100% 68%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 20% 95%;
+    --secondary-foreground: 230 25% 10%;
+
+    --muted: 220 15% 94%;
+    --muted-foreground: 220 10% 46%;
+
+    --accent: 243 100% 96%;
+    --accent-foreground: 243 100% 58%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 152 85% 30%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 220 15% 91%;
+    --input: 220 15% 91%;
+    --ring: 243 100% 68%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 10% 40%;
+    --sidebar-primary: 243 100% 68%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 243 100% 96%;
+    --sidebar-accent-foreground: 243 100% 58%;
+    --sidebar-border: 220 15% 93%;
+    --sidebar-ring: 243 100% 68%;
+    --sidebar-muted: 220 10% 60%;
+
+    --banner-gradient: linear-gradient(135deg, hsl(243 100% 68%), hsl(270 80% 65%));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: var(--font-sans);
+  }
+}
+
+/* ========== MOBILE RESPONSIVE (max-width: 767px) ========== */
+@media (max-width: 767px) {
+  /* Mobile action buttons full width */
+  .mobile-action-wrapper > * {
+    width: 100%;
+  }
+  .mobile-action-wrapper button {
+    width: 100%;
+    justify-content: center;
+  }
+  .mobile-action-wrapper .flex {
+    flex-direction: column;
+    width: 100%;
+  }
+  .mobile-action-wrapper .flex > * {
+    width: 100%;
+  }
+
+  /* Touch targets */
+  button, a, [role="button"] {
+    min-height: 36px;
+  }
+
+  /* Remove hover effects, use active */
+  @media (hover: none) {
+    button:active, a:active, [role="button"]:active {
+      opacity: 0.7;
+    }
+  }
+
+  /* Fullscreen modals */
+  [data-radix-dialog-content] {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    border-radius: 0 !important;
+    animation: slide-up 0.3s ease-out !important;
+  }
+
+  @keyframes slide-up {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+
+  /* Chat sidebar full width on mobile */
+  .chat-sidebar-mobile {
+    width: 100% !important;
+  }
+
+  /* Chat message bubbles */
+  .chat-bubble-mobile {
+    max-width: 85% !important;
+  }
+
+  /* Tables with horizontal scroll */
+  .mobile-table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .mobile-table-scroll table th:first-child,
+  .mobile-table-scroll table td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: hsl(var(--card));
+  }
+
+  /* Kalender compact */
+  .calendar-grid-mobile .calendar-cell-text {
+    display: none;
+  }
+
+  /* Settings horizontal tabs */
+  .settings-tabs-mobile {
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+  .settings-tabs-mobile nav {
+    flex-direction: row !important;
+    width: 100% !important;
+    overflow-x: auto;
+    border-bottom: 1px solid hsl(var(--border));
+    padding-bottom: 0;
+    gap: 0;
+  }
+  .settings-tabs-mobile nav button {
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* ========== TABLET (768px – 1023px) ========== */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Modals wider */
+  [data-radix-dialog-content] {
+    width: 90vw !important;
+    max-width: 90vw !important;
+  }
+}
